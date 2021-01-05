@@ -45,6 +45,9 @@ public class MainVerticle extends AbstractVerticle {
 
     // Start http server using router
     server.requestHandler(router).listen(8080);
+
+    // Complete verticle launch
+    startPromise.complete();
   }
 
   private PgPool initPg(Vertx vertx) {
